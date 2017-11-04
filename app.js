@@ -1,12 +1,13 @@
 var SerialPort  = require('serialport');
 var PubNub      = require('pubnub');
 
-var port = new SerialPort('COM3', {
+var port = new SerialPort('COM4', {
   baudRate: 9600
 });
 
+var dataArrayLength = 100;
 var dataBase = '';
-var dataArray = new Array(100);
+var dataArray = new Array(dataArrayLength);
 var arrayIndex = 0;
 var counter = 0;
 
@@ -29,11 +30,12 @@ function processData(data) {
     if (counter === 3) {
       dataArray[arrayIndex] = dataBase;
       arrayIndex++;
+      console.log(arrayIndex);
       counter = 0;
       dataBase = '';
-      if (arrayIndex === 100) {
+      if (arrayIndex === dataArrayLength) {
         arrayIndex = 0;
-        //console.log(dataArray);
+        console.log(dataArray);
         publish();
       }
     }
