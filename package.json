@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "serialport": "*",
-    "pubnub": "*"
+    "pubnub": "*",
+    "express": "*"
   }
 }

@@ -1,3 +1,8 @@
+// Setup basic express server
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+
 var SerialPort  = require('serialport');
 var PubNub      = require('pubnub');
 
@@ -8,6 +13,12 @@ var port = new SerialPort('COM4', {
 var pubnub = new PubNub({
   publishKey: 'pub-c-d3780be2-91fd-466e-9297-c2fe4c633c75',
   subscribeKey: 'sub-c-6566ac86-c19c-11e7-83f0-6e80f1f24680'
+});
+
+// Routing
+app.use(express.static(__dirname + '/SigicDashboard'));
+app.get('/', function (req, res){
+  res.sendFile(__dirname + '/index.html');
 });
 
 var measure = '';
@@ -66,3 +77,7 @@ function publishData(data) {
       console.log(status, response);
   })
 }
+
+http.listen(3000, function (){
+  console.log('listening on *:3000');
+});

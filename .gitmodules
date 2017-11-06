@@ -1,0 +1,3 @@
+[submodule "SigicDashboard"]
+	path = SigicDashboard
+	url = https://github.com/lucianohgo/SigicDashboard
