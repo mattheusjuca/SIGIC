@@ -64,6 +64,22 @@ function publish(measure) {
     'ambient_temperature': Number(measure[0]),
     'humidity': Number(measure[1]),
     'co': Number(measure[2])
+    
+    /*// WARNING
+    'ambient_temperature': 40,
+    'humidity': 25,
+    'co': Number(measure[2])
+    */
+    /*// DANGER
+    'ambient_temperature': 45,
+    'humidity': 15,
+    'co': Number(measure[2])
+    */
+    /*// FIRE!!
+    'ambient_temperature': 50,
+    'humidity': 15,
+    'co': 100
+    */
   };
   publishData(data);
 }
