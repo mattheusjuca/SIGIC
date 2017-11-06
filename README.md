@@ -1,2 +1,2 @@
 # SIGIC
-Real-Time Arduino thermometer and hygrometer that send the data from the serial-port to PubNub (https://www.pubnub.com/)
+Real-Time Arduino thermometer, hygrometer and carbon monoxide sensor that send the data from the serial-port to PubNub (https://www.pubnub.com/) and from PubNub to a Web application of SIGIC (Sistema Integrado de Gerenciamento de Incêndios e Crises).
